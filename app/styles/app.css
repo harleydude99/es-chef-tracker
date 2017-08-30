@@ -1,0 +1,6 @@
+.cook-available {
+  text-decoration: underline;
+}
+li.cook-not-available {
+  color: grey;
+}
