@@ -1,6 +1,6 @@
 <h1>Chef Tracker</h1>
 <ul>
-  {{#each cooks as |cook|}}
+  {{#each model as |cook|}}
     {{#if cook.isCookingToday}}
       <li class="cook-available">
         {{cook.name}}
@@ -14,4 +14,7 @@
     {{/if}}
   {{/each}}
 </ul>
+<hr/>
+{{input value=newChef}}
+<button {{action 'saveNewChef'}}>Save</button>
 {{outlet}}

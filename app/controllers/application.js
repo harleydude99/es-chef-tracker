@@ -2,16 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   moniker: 'chef',
-  cooks: [
-    {name: 'Gordon Ramsay', isCookingToday: true},
-    {name: 'Anthony Bourdain', isCookingToday: false},
-    {name: 'Rachael Ray', isCookingToday: true},
-    {name: 'Jamie Oliver', isCookingToday: false},
-    {name: 'Guy Fieri', isCookingToday: true}
-  ],
+  newChef: null,
   actions:{
     toggleEnterExit(cook){
-      Ember.set(cook, 'isCookingToday', !cook.isCookingToday);
+      Ember.set(cook, 'isCookingToday', !Ember.get(cook, 'isCookingToday'));
+      cook.save();
+    },
+    saveNewChef(){
+      this.store.createRecord('chef', {
+        isAvailable: false,
+        name: this.get('newChef')
+      }).save()
+      this.set('newChef', '')
     }
   }
 });
