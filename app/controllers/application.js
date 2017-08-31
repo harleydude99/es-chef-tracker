@@ -28,6 +28,19 @@ export default Ember.Controller.extend({
     increaseStudentCount(cook){
       Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')+1);
       cook.save();
+    },
+    modifyStudentCount(cook, operation){
+      let currentVal = Ember.get(cook, 'numOfStudents');
+      let newVal = 0
+      if(operation === 'add'){
+        newVal = currentVal+1;
+      }else{
+        if(currentVal > 0){
+          newVal = currentVal-1;
+        }
+      }
+      Ember.set(cook, 'numOfStudents', newVal);
+      cook.save();
     }
   }
 });

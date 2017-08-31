@@ -16,9 +16,9 @@
       </li>
     {{/if}}
     Number of students:
-    <button {{action "lowerStudentCount" cook}}>-</button>
+    <button {{action "modifyStudentCount" cook "subtract"}}>-</button>
     {{cook.numOfStudents}}
-    <button {{action "increaseStudentCount" cook}}>+</button>
+    <button {{action "modifyStudentCount" cook "add"}}>+</button>
   {{/each}}
 </ul>
 <hr/>
