@@ -6,14 +6,19 @@
       <li class="cook-available">
         {{cook.name}}
         <button {{action "toggleEnterExit" cook}}>Exit</button>
+
       </li>
     {{else}}
       <li class="cook-not-available">
         {{cook.name}}
         <button {{action "toggleEnterExit" cook}}>Enter</button>
-        <button {{action "fireChef" cook}}>Fire This Chef</button>
+        <button {{action "fireChef" cook}}>Fire</button>
       </li>
     {{/if}}
+    Number of students:
+    <button {{action "lowerStudentCount" cook}}>-</button>
+    {{cook.numOfStudents}}
+    <button {{action "increaseStudentCount" cook}}>+</button>
   {{/each}}
 </ul>
 <hr/>

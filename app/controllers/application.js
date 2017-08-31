@@ -13,12 +13,21 @@ export default Ember.Controller.extend({
     saveNewChef(){
       this.store.createRecord('chef', {
         isAvailable: false,
-        name: this.get('newChef')
+        name: this.get('newChef'),
+        numOfStudents: 0
       }).save()
       this.set('newChef', '')
     },
     fireChef(chef){
       chef.destroyRecord()
+    },
+    lowerStudentCount(cook){
+      Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')-1);
+      cook.save();
+    },
+    increaseStudentCount(cook){
+      Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')+1);
+      cook.save();
     }
   }
 });
