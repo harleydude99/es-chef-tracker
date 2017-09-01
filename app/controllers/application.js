@@ -22,11 +22,13 @@ export default Ember.Controller.extend({
       chef.destroyRecord()
     },
     lowerStudentCount(cook){
-      Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')-1);
+      //Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')-1);
+      chef.decrementProperty('numOfStudents');
       cook.save();
     },
     increaseStudentCount(cook){
-      Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')+1);
+      //Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')+1);
+      Ember.incrementProperty('numOfStudents');
       cook.save();
     },
     modifyStudentCount(cook, operation){
