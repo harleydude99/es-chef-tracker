@@ -5,6 +5,19 @@ export default Ember.Controller.extend({
   newChef: null,
   chefLength: Ember.computed.alias('model.length'),
   availableChefs: Ember.computed.filterBy('model', 'isCookingToday', true),
+  numOfStudentsArray: Ember.computed.mapBy('model', 'numOfStudents'),
+  totalStudents: Ember.computed.sum('numOfStudentsArray'),
+  //ALTERNATIVE USING Arrays.forEach
+  /*
+  totalStudents: Ember.computed('model@each.numOfStudents', function(){
+    let chefs = this.get('model');
+    let totalStudents = 0;
+    chefs.forEach((chef)=>{
+      totalStudents = totalStudents + chef.get('numOfStudents');
+    })
+    return totalStudents;
+  }),
+  */
   actions:{
     toggleEnterExit(cook){
       Ember.set(cook, 'isCookingToday', !Ember.get(cook, 'isCookingToday'));
@@ -23,7 +36,7 @@ export default Ember.Controller.extend({
     },
     lowerStudentCount(cook){
       //Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')-1);
-      chef.decrementProperty('numOfStudents');
+      cook.decrementProperty('numOfStudents');
       cook.save();
     },
     increaseStudentCount(cook){
