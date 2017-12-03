@@ -5,6 +5,10 @@ li.cook-not-available {
   color: grey;
 }
 
+li.cook-not-available a {
+  color: grey;
+}
+
 .flex-container{
   display: flex;
   flex-direction: row;
@@ -12,4 +16,9 @@ li.cook-not-available {
 
 .flex-item{
   padding: 10px;
+}
+
+.medium-text-area{
+  height: 50px;
+  width: 300px;
 }

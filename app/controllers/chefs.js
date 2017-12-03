@@ -31,9 +31,6 @@ export default Ember.Controller.extend({
       }).save()
       this.set('newChef', '')
     },
-    fireChef(chef){
-      chef.destroyRecord()
-    },
     lowerStudentCount(cook){
       //Ember.set(cook, 'numOfStudents', Ember.get(cook, 'numOfStudents')-1);
       cook.decrementProperty('numOfStudents');

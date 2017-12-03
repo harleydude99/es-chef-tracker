@@ -5,18 +5,14 @@
     <p>Our {{chefLength}} chefs teach {{totalStudents}} students.</p>
     <ul>
       {{#each model as |cook|}}
-        {{#if cook.isCookingToday}}
-          <li class="cook-available">
-            {{#link-to 'chefs.chef' cook.id}}{{cook.name}}{{/link-to}}
-            <button {{action "toggleEnterExit" cook}}>Exit</button>
-          </li>
-        {{else}}
-          <li class="cook-not-available">
-            {{cook.name}}
-            <button {{action "toggleEnterExit" cook}}>Enter</button>
-            <button {{action "fireChef" cook}}>Fire</button>
-          </li>
-        {{/if}}
+        <li class="{{if cook.isCookingToday '' 'cook-not-available'}}">
+          {{#link-to 'chefs.chef' cook.id}}{{cook.name}}{{/link-to}}
+          {{#if cook.isCookingToday}}
+              <button {{action "toggleEnterExit" cook}}>Exit</button>
+          {{else}}
+              <button {{action "toggleEnterExit" cook}}>Enter</button>
+          {{/if}}
+        </li>
         Number of students:
         <button {{action "modifyStudentCount" cook "subtract"}}>-</button>
         {{cook.numOfStudents}}
