@@ -2,5 +2,13 @@
 
 <p>Name: {{input value=model.name}}</p>
 <p>Description: {{textarea value=model.description class="medium-text-area"}}</p>
+<p>{{input type="checkbox" name="hasCulinaryDegree" checked=model.hasCulinaryDegree}} Has Culinary Degree?</p>
+
+{{#if model.hasCulinaryDegree}}
+<p>
+Culinary School Attended: {{input value=model.culinarySchoolAttended}}
+</p>
+{{/if}}
+
 
 <button {{action 'save'}}>Save</button>

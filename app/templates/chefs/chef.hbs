@@ -1,5 +1,11 @@
 <h1>{{model.name}}</h1>
 <p>{{model.description}}</p>
+
+{{#if model.hasCulinaryDegree}}
+<p>
+Culinary School Attended: {{model.culinarySchoolAttended}}
+</p>
+{{/if}}
 {{link-to 'Edit this chef.' 'chefs.chef.edit' model.id}}
 
 <button {{action "fireChef" model}}>Fire</button>
