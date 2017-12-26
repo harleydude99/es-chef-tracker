@@ -1,12 +1,28 @@
 .cook-available {
   text-decoration: underline;
 }
-li.cook-not-available {
+.cook-not-available {
   color: grey;
 }
 
-li.cook-not-available a {
+.cook-not-available a {
   color: grey;
+}
+
+.chef-item{
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 250px;
+  padding: 4px;
+  margin: 5px;
+}
+
+.chef-item .title-bar{
+  font-size: 1.3em;
+}
+
+.chef-item .description{
+  padding: 8px;
 }
 
 .flex-container{
@@ -21,4 +37,8 @@ li.cook-not-available a {
 .medium-text-area{
   height: 50px;
   width: 300px;
+}
+
+.pull-right{
+  float: right;
 }
