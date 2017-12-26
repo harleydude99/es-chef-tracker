@@ -1,6 +1,7 @@
 
 <p>Want to know if your favorite chef is cooking right now? Chef Tracker has your back.</p>
 
-{{#email-status}}
-  <p>This is only on the About page</p>
+{{#email-status as |word word2|}}
+  <p>{{word}}.  This is only on the About page</p>
+  {{word2}}
 {{/email-status}}

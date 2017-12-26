@@ -1,6 +1,6 @@
 <div class="email-status">
   <p>Want to contact us about {{emailSubject}}?  Email us at {{addressee}}@chef-tracker.ember</p>
-  {{yield}}
+  {{yield 'hello' 'world'}}
 
   {{#if hasBlock}}
     <p>You're using a block component!</p>

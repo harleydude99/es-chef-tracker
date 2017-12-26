@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  isOpen: false,
   actions: {
     toggleEnterExit(cook){
       Ember.set(cook, 'isCookingToday', !Ember.get(cook, 'isCookingToday'));
@@ -21,11 +20,6 @@ export default Ember.Component.extend({
       }
       Ember.set(cook, 'numOfStudents', newVal);
       cook.save();
-    },
-    toggleOpen(){
-      this.set('isOpen', !this.get('isOpen'));
-      //could also
-      //this.toggleProperty('isOpen');
     }
   }
 });

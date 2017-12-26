@@ -19,7 +19,12 @@ export default Ember.Controller.extend({
   }),
   */
   actions:{
-
+    toggleEnterExit(cook){
+      Ember.set(cook, 'isCookingToday', !Ember.get(cook, 'isCookingToday'));
+      //could also do
+      //cook.set('isCookingToday', !cook.get('isCookingToday'));
+      cook.save();
+    },
     saveNewChef(){
       this.store.createRecord('chef', {
         isAvailable: false,
