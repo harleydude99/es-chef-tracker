@@ -4,7 +4,6 @@ export default Ember.Controller.extend({
   actions: {
     save(){
       let cook = this.get('model');
-      console.log(cook.data);
       if(!cook.data.hasCulinaryDegree){
         Ember.set(cook, 'culinarySchoolAttended', '');
       }

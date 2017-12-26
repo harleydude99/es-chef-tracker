@@ -1,8 +1,11 @@
 <li class="{{if cook.isCookingToday '' 'cook-not-available'}}">
-  {{#link-to 'chefs.chef' cook.id}}{{cook.name}}{{/link-to}}
-  <button {{action 'toggleEnterExit' cook}}>
-    {{if cook.isCookingToday 'Exit' 'Enter'}}
-  </button>
+  <div {{action 'toggleOpen'}}>{{cook.name}} {{if isOpen 'V' '>'}}</div>
+  {{#if isOpen}}
+  {{#link-to 'chefs.chef' cook.id}}<button>Show page</button>{{/link-to}}
+    <button {{action 'toggleEnterExit' cook}}>
+      {{if cook.isCookingToday 'Exit' 'Enter'}}
+    </button>
+  {{/if}}
 </li>
 Number of students:
 <button {{action "modifyStudentCount" cook "subtract"}}>-</button>
