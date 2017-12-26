@@ -1,0 +1,10 @@
+<li class="{{if cook.isCookingToday '' 'cook-not-available'}}">
+  {{#link-to 'chefs.chef' cook.id}}{{cook.name}}{{/link-to}}
+  <button {{action 'toggleEnterExit' cook}}>
+    {{if cook.isCookingToday 'Exit' 'Enter'}}
+  </button>
+</li>
+Number of students:
+<button {{action "modifyStudentCount" cook "subtract"}}>-</button>
+{{cook.numOfStudents}}
+<button {{action "modifyStudentCount" cook "add"}}>+</button>
