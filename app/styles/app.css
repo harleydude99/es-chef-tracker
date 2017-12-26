@@ -25,6 +25,16 @@
   padding: 8px;
 }
 
+.img-icon{
+  max-height: 64px;
+  max-width: 64px;
+  padding: 5px;
+}
+
+.description{
+  min-height: 70px;
+}
+
 .flex-container{
   display: flex;
   flex-direction: row;
@@ -41,4 +51,8 @@
 
 .pull-right{
   float: right;
+}
+
+.pull-left{
+  float: left;
 }

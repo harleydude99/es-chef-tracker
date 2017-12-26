@@ -6,5 +6,6 @@ export default DS.Model.extend({
   hasCulinaryDegree: DS.attr('boolean'),
   culinarySchoolAttended: DS.attr('string'),
   numOfStudents: DS.attr('number', {defaultValue: 0}),
-  description: DS.attr('string')
+  description: DS.attr('string'),
+  imageUrl: DS.attr('string')
 });
