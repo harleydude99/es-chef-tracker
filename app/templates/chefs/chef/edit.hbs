@@ -11,7 +11,7 @@ Culinary School Attended: {{input value=model.culinarySchoolAttended}}
 {{/if}}
 <p>Image URL: {{input value=model.imageUrl}}</p>
 
-{{icon-image src=model.imageUrl left=true}}
+{{icon-image model.imageUrl left=true}}
 <br>
 
 <button {{action 'save'}}>Save</button>

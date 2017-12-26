@@ -1,7 +1,7 @@
 <div class="chef-item {{if cook.isCookingToday '' 'cook-not-available'}}">
   <div {{action 'toggleOpen'}} class="title-bar">{{cook.name}} <span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
   {{#if isOpen}}
-    {{icon-image src=cook.imageUrl left=true}}
+    {{icon-image cook.imageUrl left=true}}
     <div class="description">{{cook.description}}</div>
     {{#link-to 'chefs.chef' cook.id}}<button>Show page</button>{{/link-to}}
     {{#link-to 'chefs.chef.edit' cook.id}}<button>Edit page</button>{{/link-to}}
