@@ -1,7 +1,17 @@
 
 <p>Want to know if your favorite chef is cooking right now? Chef Tracker has your back.</p>
 
-{{#email-status as |word word2|}}
-  <p>{{word}}.  This is only on the About page</p>
-  {{word2}}
-{{/email-status}}
+{{#collapsible-component as |isOpen component|}}
+  <div {{action 'toggleOpen' target=component}} class="title-bar">
+    <span class="pull-left">{{if isOpen 'See less...' 'See more...'}}</span>
+  </div>
+  <br>
+  {{#if isOpen}}
+  <p>Chef Tracker is sponsored by a shadowy cabal of food manufacturers.</p>
+
+  <p>But we assure you, there is no cause for alarm.</p>
+  {{/if}}
+{{/collapsible-component}}
+
+<hr>
+<p>{{email-status}}</p>
