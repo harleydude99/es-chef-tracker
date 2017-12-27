@@ -1,5 +1,6 @@
 <h1>{{model.name}}</h1>
 <p>{{model.description}}</p>
+<p>This chef works at: {{model.restaurant.name}}</p>
 {{icon-image model.imageUrl left=true}}
 <br>
 {{#if model.hasCulinaryDegree}}

@@ -1,0 +1,53 @@
+add model
+add attr's to model
+firebase -> add model structure  (0:59)
+add some data to firebase
+add route (plural)
+in route, add model hook (return this.store.findAll('<plural>');
+handlebars template (plural) <h1>
+	loop through and display name
+	make sure it runs (4200/<plural>)
+	add <ul> to plural template with <li>'s
+add route for show page (singular) => plural/singular
+in router, add , {path: 'restaurant_id'});
+route file can stay as is
+test singular hbs to ensure it is showing properly
+	<h1>Show Route</h1>
+	add {{outlet}} to plural
+	test by /plural/1
+
+on singular hbs, after <h1> add Name: model.name, etc
+plural, each li becomes a link-to to the show page
+
+move show to right, add flex container etc., 2 flex-items, 2nd has {{outlet}}
+
+create edit route plural/singular/edit
+
+router - replace singular.edit (7:55)
+	with this.route('restaurant.edit', {path: ':restaurant_id/edit'});
+singular show page, add link-to 'plural.singular.edit' model.id
+
+edit page, <h1> editing singular</h1>
+	add name: {{input value=model.name}}
+	button {{action 'save'}}
+
+generate controller plural/singular/edit
+edit controller, add actions hash
+	this.get('model').save();
+	this.transitionToRoute('plural.singular', this.get('model.id'));
+	prove save works
+
+make pretty  (10:40)
+	plural template - remove ul and li's, put remain in div, class singular-item
+	same style as chef-item probably
+	max-width -> width
+
+link at top menu
+	application.hbs, add there ('Plural' 'plural')
+
+exercise:
+	3 restaurants (Steaky McSteakHouse, Taco Tuesday, We Will Wok Your World)
+
+
+
+

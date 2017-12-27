@@ -7,5 +7,6 @@ export default DS.Model.extend({
   culinarySchoolAttended: DS.attr('string'),
   numOfStudents: DS.attr('number', {defaultValue: 0}),
   description: DS.attr('string'),
-  imageUrl: DS.attr('string')
+  imageUrl: DS.attr('string'),
+  restaurant: DS.belongsTo()
 });

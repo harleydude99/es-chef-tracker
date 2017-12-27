@@ -1,5 +1,11 @@
 <h1>Show Route</h1>
 
 <p>Name: {{model.name}}</p>
+<p>The following chefs work here:</p>
+<ul>
+  {{#each model.chefs as |chef|}}
+    {{#link-to 'chefs.chef' chef.id}}<li>{{chef.name}}</li>{{/link-to}}
+  {{/each}}
+</ul>
 
 {{#link-to 'restaurants.restaurant.edit' model.id}}<button>Edit</button>{{/link-to}}
