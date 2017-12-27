@@ -1,0 +1,46 @@
+generate route chefs/chef/edit
+	don't overwrite existing template
+open the edit.js for the route
+	model(params){
+		return Ember.RSVP.hash({
+			chef:this.store.findRecord('chef', params.chef_id),
+			restaurants: this.store.findAll('restaurant')
+		})
+	}
+
+in edit.hbs for chef, change where model.<> to model.chef.<>
+edit controller, change in save action model -> model.chef
+chefs.hbs - in links, where sending in the chef object, send in the 	chef.id instead
+edit.hbs - x-select action="selectRestaurant"
+chef controller - in addition to save(), 
+	add selectRestaurant(selection, component){
+		//selection is the NEW selection
+		//old is still in the chef
+		let chef = this.get('model.chef');
+		chef.get('restaurant').then((restaurant)=>{
+			chef.set('restaurant', selection);
+			selection.save();//save new
+			restaurant.save();//save old as well
+		})
+	}
+
+edit.hbs - value=model.chef.restaurant.content for x-select
+
+edit.hbs - teeplate for chef
+edit.js - controller for chef
+edit.js - route for chef
+
+from tutorial - WRONG!
+{{#x-select value=model.chef.restaurant.content action="selectRestaurant"}}
+  {{#each model.restaurants as |restaurant|}}
+    {{#x-option value=restaurant}}{{restaurant.name}}{{/x-option}}
+  {{/each}}
+{{/x-select}}
+
+{{#x-select value=model.chef.restaurant.content on-change=(action "selectRestaurant") as |xs| }}
+  {{#each model.restaurants as |restaurant|}}
+    {{#xs.option value=restaurant}}{{restaurant.name}}{{/xs.option}}
+  {{/each}}
+{{/x-select}}
+
+https://emberx-select.pagefrontapp.com/migration-guide

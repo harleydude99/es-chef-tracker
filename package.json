@@ -35,6 +35,7 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.13.0",
     "emberfire": "^2.0.7",
+    "emberx-select": "^3.1.0",
     "loader.js": "^4.2.3"
   },
   "engines": {
