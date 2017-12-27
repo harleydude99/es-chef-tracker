@@ -9,10 +9,10 @@
   color: grey;
 }
 
-.chef-item{
+.chef-item, .restaurant-item{
   border: 1px solid black;
   border-radius: 5px;
-  max-width: 250px;
+  width: 250px;
   padding: 4px;
   margin: 5px;
 }

@@ -13,6 +13,10 @@ Router.map(function() {
   });
   this.route('about');
   this.route('training');
+  this.route('restaurants', function() {
+    this.route('restaurant', {path: ':restaurant_id'});
+    this.route('restaurant.edit', {path: ':restaurant_id/edit'});
+  });
 });
 
 export default Router;
