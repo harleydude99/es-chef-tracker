@@ -1,0 +1,15 @@
+
+	<ul> chefs
+
+changed
+edit.hbs for restaurant
+	list of chefs
+	list of chefs not there that could be
+	model. -> model.restaurant.
+edit.js route for restaurant
+	model for restaurant and chefs
+edit.js controller for restaurant
+	removeChef() (and probably an add action)
+	model. -> model.restaurant.
+
+stopped at 6:39

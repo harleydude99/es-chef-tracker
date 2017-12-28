@@ -1,3 +1,17 @@
 <h1>Editing Restaurant</h1>
-	Name: {{input value=model.name}}
+	Name: {{input value=model.restaurant.name}}
+
+	<h3>Current Chefs</h3>
+	<ul>
+		{{#each model.restaurant.chefs as |chef|}}
+		<li>{{chef.name}}<button {{action 'removeChef' chef}}>Remove Chef</button></li>
+		{{/each}}
+	</ul>
+
+	<h3>Other Chefs</h3>
+	<ul>
+		{{#each otherChefs as |chef|}}
+		<li>{{chef.name}}<button {{action 'addChef' chef}}>Poach Chef</button></li>
+		{{/each}}
+	</ul>
 	<button {{action 'save'}}>Save</button>
